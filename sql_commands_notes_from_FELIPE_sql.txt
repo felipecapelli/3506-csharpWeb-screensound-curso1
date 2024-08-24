@@ -1,0 +1,10 @@
+create table Artistas(
+        Id INT PRIMARY KEY IDENTITY(1,1),
+        Nome NVARCHAR(255) NOT NULL,
+        Bio NVARCHAR(255) NOT NULL,
+        FotoPerfil NVARCHAR(255) NOT NULL
+);
+
+INSERT INTO [ScreenSound].[dbo].[Artistas] ([Nome] , [Bio], [FotoPerfil]) VALUES ('Mamonas assassinas', 'gostava na infancia', 'foto')
+
+SELECT * FROM [ScreenSound].[dbo].[Artistas] 

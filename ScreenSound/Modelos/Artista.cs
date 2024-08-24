@@ -3,6 +3,10 @@
 internal class Artista 
 {
     private List<Musica> musicas = new List<Musica>();
+    public string Nome { get; set; }
+    public string FotoPerfil { get; set; }
+    public string Bio { get; set; }
+    public int Id { get; set; }
 
     public Artista(string nome, string bio)
     {
@@ -10,11 +14,6 @@ internal class Artista
         Bio = bio;
         FotoPerfil = "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png";
     }
-
-    public string Nome { get; set; }
-    public string FotoPerfil { get; set; }
-    public string Bio { get; set; }
-    public int Id { get; set; }
 
     public void AdicionarMusica(Musica musica)
     {

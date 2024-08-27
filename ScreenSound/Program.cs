@@ -1,5 +1,31 @@
-﻿using ScreenSound.Menus;
+﻿using ScreenSound.Banco;
+using ScreenSound.Menus;
 using ScreenSound.Modelos;
+
+try
+{
+    var artistaDAL = new ArtistaDAL();
+    //artistaDAL.Adicionar(new Artista("Jesus Culture", "Worship Christian rock group"));
+
+    var artistaAtualizar = artistaDAL.Buscar("Fernandinho");
+    Console.WriteLine(artistaAtualizar.Nome);
+    //artistaAtualizar.Bio = "Cartor gospel brasileiro";
+    //artistaDAL.Atualizar(artistaAtualizar);
+
+    //var artistaExcluir = artistaDAL.Buscar("Hillsong United");
+    //artistaDAL.Excluir(artistaExcluir);
+
+    var listaArtistas = artistaDAL.Listar();
+
+    foreach (var artista in listaArtistas)
+    {
+        Console.WriteLine(artista);
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
 
 Artista ira = new Artista("Ira!", "Banda Ira!");
 Artista beatles = new("The Beatles", "Banda The Beatles");

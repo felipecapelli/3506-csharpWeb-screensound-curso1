@@ -5,15 +5,14 @@ using ScreenSound.Modelos;
 try
 {
     var artistaDAL = new ArtistaDAL();
-    //artistaDAL.Adicionar(new Artista("Jesus Culture", "Worship Christian rock group"));
+    artistaDAL.Adicionar(new Artista("Jesus Culture", "Worship Christian rock group"));
 
     var artistaAtualizar = artistaDAL.Buscar("Fernandinho");
-    Console.WriteLine(artistaAtualizar.Nome);
-    //artistaAtualizar.Bio = "Cartor gospel brasileiro";
-    //artistaDAL.Atualizar(artistaAtualizar);
+    artistaAtualizar.Bio = "Christian singer";
+    artistaDAL.Atualizar(artistaAtualizar);
 
-    //var artistaExcluir = artistaDAL.Buscar("Hillsong United");
-    //artistaDAL.Excluir(artistaExcluir);
+    var artistaExcluir = artistaDAL.Buscar("Hillsong United");
+    artistaDAL.Excluir(artistaExcluir);
 
     var listaArtistas = artistaDAL.Listar();
 

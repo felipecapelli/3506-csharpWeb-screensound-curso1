@@ -60,15 +60,12 @@ namespace ScreenSound.Banco
             command.Parameters.AddWithValue("@nome", nomeArtistaParaBuscar);
 
             using SqlDataReader dataReader = command.ExecuteReader();
-            Artista artista = null;
 
-            while (dataReader.Read())
-            {
-                string nomeArtista = Convert.ToString(dataReader["Nome"]);
-                string bioArtista = Convert.ToString(dataReader["Bio"]);
-                int idArtista = Convert.ToInt32(dataReader["Id"]);
-                artista = new(nomeArtista, bioArtista) { Id = idArtista };
-            }
+            dataReader.Read();
+            string nomeArtista = Convert.ToString(dataReader["Nome"]);
+            string bioArtista = Convert.ToString(dataReader["Bio"]);
+            int idArtista = Convert.ToInt32(dataReader["Id"]);
+            Artista artista = new(nomeArtista, bioArtista) { Id = idArtista };
 
             return artista;
         }
